@@ -1,52 +1,33 @@
+# Gradle
 .gradle
 build/
-
-# Ignore Gradle GUI config
-gradle-app.setting
-
-# =========================
-# Operating System Files
-# =========================
-
-# OSX
-# =========================
-
 .DS_Store
-.AppleDouble
-.LSOverride
+reports/
 
-# Thumbnails
-._*
 
-# Files that might appear on external disk
-.Spotlight-V100
-.Trashes
+# IDEA
+.idea
+*.ipr
+*.iws
+*.iml
 
-# Directories potentially created on remote AFP share
-.AppleDB
-.AppleDesktop
-Network Trash Folder
-Temporary Items
-.apdisk
 
-# Windows
-# =========================
+# Eclipse
+.classpath
+.project
+.settings
 
-# Windows image file caches
-Thumbs.db
-ehthumbs.db
+# JRebel
+tools/jrebel/licensing.info
 
-# Folder config file
-Desktop.ini
+*.log
 
-# Recycle Bin used on file shares
-$RECYCLE.BIN/
 
-# Windows Installer files
-*.cab
-*.msi
-*.msm
-*.msp
+tablet/src/main/frontend/node_modules/
 
-# Windows shortcuts
-*.lnk
+.credentials
+
+# Elasticsearch
+**/data/
+
+up-config/
