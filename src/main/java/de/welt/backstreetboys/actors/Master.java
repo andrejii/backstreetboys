@@ -19,7 +19,7 @@ import java.util.Set;
 public class Master extends UntypedActor {
 
     private long countOfFeeds;
-    private long processedFeeds = 0;
+    private long processedFeeds;
     private ActorRef workerRouter;
     private final Time time = new Time();
     private final static Logger LOG = LoggerFactory.getLogger(Master.class);
@@ -45,6 +45,7 @@ public class Master extends UntypedActor {
     }
 
     private void processMessages(Map<String, String> workTasks) {
+        processedFeeds = 0;
         this.countOfFeeds = workTasks.size();
         workTasks.entrySet().forEach(workTask -> workerRouter.tell(new Task(workTask), getSelf()));
     }
@@ -53,7 +54,8 @@ public class Master extends UntypedActor {
         time.end();
         LOG.info("Backstreet Boys downloaded all feeds in {} ms.", time.elapsedTimeMilliseconds());
         LOG.info("Now send {} ids to message queue: [{}]", allIDs.size(), Joiner.on(",").join(allIDs));
-        getContext().system().shutdown();
+//        getContext().system().shutdown();
+
     }
 
     public static Props createMaster() {
